@@ -52,6 +52,31 @@ def main():
 
     if "{{ cookiecutter.create_gitlab_ci }}".lower() == "n":
         remove_files('.gitlab-ci.yml')
+    else:
+        #
+        # .gitlab-ci.yml
+        #
+
+        # Set random database user
+        set_flag(
+            '.gitlab-ci.yml',
+            'CC_DB_USER_CC',
+            length=24,
+        )
+
+        # Set random password for database user password
+        set_flag(
+            '.gitlab-ci.yml',
+            'CC_DB_PASS_CC',
+            length=24,
+        )
+
+        # Set random database
+        set_flag(
+            '.gitlab-ci.yml',
+            'CC_DB_CC',
+            length=32,
+        )
 
     if "{{ cookiecutter.use_docker }}".lower() == "n":
         remove_files('docker-compose.yml', '.dockerignore', 'Dockerfile', 'docker-entrypoint.sh')
@@ -102,31 +127,6 @@ def main():
         'CC_SECRET_KEY_CC',
         length=50,
         punctuation=True,
-    )
-
-    #
-    # .gitlab-ci.yml
-    #
-
-    # Set random database user
-    set_flag(
-        '.gitlab-ci.yml',
-        'CC_DB_USER_CC',
-        length=24,
-    )
-
-    # Set random password for database user password
-    set_flag(
-        '.gitlab-ci.yml',
-        'CC_DB_PASS_CC',
-        length=24,
-    )
-
-    # Set random database
-    set_flag(
-        '.gitlab-ci.yml',
-        'CC_DB_CC',
-        length=32,
     )
 
 if __name__ == "__main__":
