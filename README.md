@@ -35,5 +35,16 @@ cookiecutter https://gitlab.com/thiras/cookiecutter-docker-django
 
 You'll be prompted for some values and options script needs.
 
+## Developing on the cookiecutter
+
+```
+pip install -r requirements.txt
+inv watch
+# it will then continously build the cookiecutter template.
+```
+
+
 ## Contributions
 Contributions are welcome. Contributors should comply with [Code of Conduct](CODE_OF_CONDUCT.md).
+
+This is a fork of [Thiras cookiecutter](https://gitlab.com/thiras/cookiecutter-docker-django)
