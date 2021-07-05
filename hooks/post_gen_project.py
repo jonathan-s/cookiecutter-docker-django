@@ -123,7 +123,7 @@ def main():
 
     # Set development secret key at settings.py
     set_flag(
-        '{{ cookiecutter.project_slug }}/settings/common.py',
+        'config/settings/common.py',
         'CC_SECRET_KEY_CC',
         length=50,
         punctuation=True,
