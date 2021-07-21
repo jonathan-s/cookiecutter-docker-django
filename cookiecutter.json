@@ -1,7 +1,7 @@
 {
-  "full_name": "Ant Somers",
-  "email": "antsomers@gmail.com",
-  "gitlab_username": "thiras",
+  "full_name": "Jonathan Sundqvist",
+  "email": "jonathan+github@argpar.se",
+  "gitlab_username": "jonathan-s",
   "project_name": "Cookiecutter Docker Django",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "Unbiased Dockerized Django Cookiecutter",
@@ -18,14 +18,5 @@
   ],
   "domain_name": "example.com",
   "use_docker": "y",
-  "create_gitlab_ci": [
-    "with shell runner",
-    "with GitLab shared runners (DinD)",
-    "without Docker",
-    "n"
-  ],
-  "codeclimate_control_at_ci": "n",
-  "use_pgadmin": "y",
-  "pgadmin_password": "",
   "_extensions": ["jinja2_time.TimeExtension"]
 }

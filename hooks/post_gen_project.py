@@ -50,39 +50,33 @@ def main():
     if "{{ cookiecutter.license }}" ==  "Not open source":
         remove_files('LICENSE')
 
-    if "{{ cookiecutter.create_gitlab_ci }}".lower() == "n":
-        remove_files('.gitlab-ci.yml')
-    else:
-        #
-        # .gitlab-ci.yml
-        #
+    #
+    # .gitlab-ci.yml
+    #
 
-        # Set random database user
-        set_flag(
-            '.gitlab-ci.yml',
-            'CC_DB_USER_CC',
-            length=24,
-        )
+    # Set random database user
+    set_flag(
+        '.gitlab-ci.yml',
+        'CC_DB_USER_CC',
+        length=24,
+    )
 
-        # Set random password for database user password
-        set_flag(
-            '.gitlab-ci.yml',
-            'CC_DB_PASS_CC',
-            length=24,
-        )
+    # Set random password for database user password
+    set_flag(
+        '.gitlab-ci.yml',
+        'CC_DB_PASS_CC',
+        length=24,
+    )
 
-        # Set random database
-        set_flag(
-            '.gitlab-ci.yml',
-            'CC_DB_CC',
-            length=32,
-        )
+    # Set random database
+    set_flag(
+        '.gitlab-ci.yml',
+        'CC_DB_CC',
+        length=32,
+    )
 
     if "{{ cookiecutter.use_docker }}".lower() == "n":
         remove_files('docker-compose.yml', '.dockerignore', 'Dockerfile', 'docker-entrypoint.sh')
-
-    if "{{ cookiecutter.create_gitlab_ci }}".lower() != "with shell runner":
-        remove_files('docker-compose.ci.yml')
 
     #
     # .env file

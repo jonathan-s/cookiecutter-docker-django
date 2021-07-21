@@ -19,7 +19,7 @@ env = environ.Env(
     SECRET_KEY=(str, os.getenv('SECRET_KEY', 'CC_SECRET_KEY_CC')),
     DATABASE_URL=(str, os.getenv('DATABASE_URL')),
 )
-environ.Env.read_env('.env')  # Read .env
+environ.Env.read_env('.env') # Read .env
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
